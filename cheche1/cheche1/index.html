@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Checador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login">
+        <h2>Login</h2>
+        <input type="text" id="employeeId" placeholder="ID del Empleado">
+        <button onclick="checkLogin()">Entrar</button>
+        <div id="passwordSection" style="display: none;">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <div id="adminPanel" style="display: none;">
+        <button onclick="showCreateUser()">Crear Usuario</button>
+        <button onclick="showCreateAdmin()">Crear Administrador</button>
+        <button onclick="guestLogin()">Entrar como Invitado</button>
+        <button onclick="showLogin()">Regresar al Login</button>
+        <button onclick="showAllUsers()">Mostrar Todos los Usuarios</button>
+    </div>
+
+    <div id="createUser" style="display: none;">
+        <h2>Crear Usuario</h2>
+        <input type="text" id="newUserId" placeholder="ID">
+        <input type="text" id="newUserName" placeholder="Nombre">
+        <input type="text" id="newUserPhone" placeholder="Teléfono">
+        <input type="email" id="newUserEmail" placeholder="Correo Electrónico">
+        <input type="password" id="newUserPassword" placeholder="Crear Contraseña">
+        <input type="date" id="newUserDOB" placeholder="Fecha de Nacimiento">
+        <input type="number" id="newUserAge" placeholder="Edad">
+        <select id="newUserGender">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        <select id="newUserDepartment">
+            <option value="Sistemas">Sistemas</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Electromecanica">Electromecánica</option>
+            <option value="Renovables">Renovables</option>
+        </select>
+        <button onclick="createUser()">Crear</button>
+        <button onclick="showLogin()">Regresar al Login</button>
+    </div>
+
+    <div id="createAdmin" style="display: none;">
+        <h2>Crear Administrador</h2>
+        <input type="text" id="newAdminId" placeholder="ID">
+        <input type="text" id="newAdminName" placeholder="Nombre">
+        <input type="text" id="newAdminPhone" placeholder="Teléfono">
+        <input type="email" id="newAdminEmail" placeholder="Correo Electrónico">
+        <input type="password" id="newAdminPassword" placeholder="Crear Contraseña">
+        <input type="date" id="newAdminDOB" placeholder="Fecha de Nacimiento">
+        <input type="number" id="newAdminAge" placeholder="Edad">
+        <select id="newAdminGender">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        <select id="newAdminDepartment">
+            <option value="Sistemas">Sistemas</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Electromecanica">Electromecánica</option>
+            <option value="Renovables">Renovables</option>
+        </select>
+        <button onclick="createAdmin()">Crear</button>
+        <button onclick="showLogin()">Regresar al Login</button>
+    </div>
+
+    <div id="guest" style="display: none;">
+        <h2>Entrar como Invitado</h2>
+        <input type="text" id="guestName" placeholder="Nombre">
+        <button onclick="guestCheckIn()">Entrar</button>
+        <button onclick="showLogin()">Regresar al Login</button>
+    </div>
+
+    <div id="checkInOut" style="display: none;">
+        <h2>Registro de Entrada y Salida</h2>
+        <div id="currentTime"></div>
+        <table id="logTable">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Hora de Entrada</th>
+                <th>Hora de Salida</th>
+            </tr>
+        </table>
+        <button onclick="checkIn()">Checada de Entrada</button>
+        <button onclick="checkOut()">Checada de Salida</button>
+        <button onclick="showLogin()">Regresar al Login</button>
+    </div>
+
+    <div id="allUsers" style="display: none;">
+        <h2>Todos los Usuarios</h2>
+        <table id="usersTable">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo Electrónico</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Departamento</th>
+            </tr>
+        </table>
+        <button onclick="showAdminPanel()">Regresar al Panel de Administración</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
